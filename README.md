@@ -11,7 +11,8 @@ in a zero beta plasma for a user-specified or predefined magnetic field.
 Here there are pre-defined classes for different magnetic fields,
 currently 
 
-* **Linear2dNull** B = [y,x,0] [a rotation of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
+* **Linear2dNull** B = [y,x,0] [a rotated version of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
+* **Dipole3dCase1** a 3D dipolar magnetic 'dome' embedded within a uniform vertical magnetic field. Described in McLaughlin, Botha, Thurgood & Wiggs (2018, in prep). 
 
 This is where new fields should be added, as unique classes. No checks
 are made on the physicality of the field specified.
