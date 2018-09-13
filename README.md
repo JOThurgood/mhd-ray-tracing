@@ -69,7 +69,9 @@ speed than in regions of slower procession. In reality, it is just that the line
 in time means there are less points to construct the line. The ode 
 solution itself *usually* has used an appropriate step size within 
 adaptive tolerances. 
-Beware of this. In future it would be best to allow the user to pass 
+Beware of this. 
+
+In future it would be best to allow the user to pass 
 the sampling points through to the solver, rather than it assuming 
 linear spacing between the two.
 
