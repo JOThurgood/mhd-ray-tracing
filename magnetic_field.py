@@ -6,7 +6,6 @@
 class Linear2dNull:
 
     def __init__(self, x, y, z):
-
         self.x = y  
         self.y = x   
         self.z = 0.0
@@ -21,7 +20,7 @@ class Linear2dNull:
         self.z_dz = 0.0
 
 
-# The field described in McLaughlin, Botha, Thurgood & Wiggs 
+# The field described in McLaughlin, Thurgood, Botha & Wiggs 
 # (2018, in prep)
 class Dipole3dCase1:
 

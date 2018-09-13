@@ -12,7 +12,7 @@ Here there are pre-defined classes for different magnetic fields,
 currently 
 
 * **Linear2dNull** B = [y,x,0] [a rotated version of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
-* **Dipole3dCase1** a 3D dipolar magnetic 'dome' embedded within a uniform vertical magnetic field. Described in McLaughlin, Botha, Thurgood & Wiggs (2018, in prep). 
+* **Dipole3dCase1** a 3D dipolar magnetic 'dome' embedded within a uniform vertical magnetic field. Described in McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
 
 This is where new fields should be added, as unique classes. No checks
 are made on the physicality of the field specified.
@@ -74,4 +74,4 @@ Examples of using the solver for the linear 2D magnetic null point
 ### test_3d.py
 
 Examples of using the solver for the 3D dipole field described in
-McLaughlin, Botha, Thurgood & Wiggs (2018, in prep). 
+McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
