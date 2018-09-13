@@ -1,5 +1,8 @@
 print('''Testing for wkb_fast_zerobeta solutions at a 3dnukk.
-      This test script intends that you enter Dipole3dCase1
+      This test script intends that you enter:
+
+          Dipole3dCase1
+
       when prompted. Entering other valid classes will give 
       nonsense results in this context''')
 
