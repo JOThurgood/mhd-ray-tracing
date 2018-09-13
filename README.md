@@ -42,5 +42,31 @@ x0 =
 # y0,z0,p0,q0,r0 etc..
 myray = wkb.Ray(x0,y0,z0,p0,q0,r0)
 ```
-If we have appropriately 
+We might then ask the solve to integrate the ode up to a end
+characteristic time (s_end) with 100 linearly spaced sampling points 
+between s0 and s_end
 
+```python
+s_end = 1.0
+ns = 100
+test.solve(s_end,ns)
+```
+
+This can be then plotted. We note that this returns the solution at 100 
+*sample points*. The ode solver chooses step sizes within tolerances. 
+This can give the impression of larger 'jumps' in regions of high alfven
+speed than in smaller. In reality, it is just that the linear sampling
+in time means there are less points to construct the line. 
+Beware of this. In future it would be best to allow the user to pass 
+the sampling points through to the solver, rather than it assuming 
+linear spacing between the two.
+
+### test_linear2dnull.py
+
+Examples of using the solver for the linear 2D magnetic null point
+ B=[y,x] and plotting.
+
+### test_3d.py
+
+Examples of using the solver for the 3D dipole field described in
+McLaughlin, Botha, Thurgood & Wiggs (2018, in prep). 
