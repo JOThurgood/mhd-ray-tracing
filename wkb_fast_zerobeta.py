@@ -39,14 +39,13 @@ def df_ds(f, s):
     b = magnetic_field(x, y, z) 
     b2 = b.x**2 + b.y**2 + b.z**2
     # Derivatives with respect to s
-    dt = -omega
+    dt = -omega #James' code had -2pi**2? 
     dx = p * b2
     dy = q * b2
     dz = r * b2 
     dp = -k2 * (b.x*b.x_dx + b.y*b.y_dx + b.z*b.z_dx)  
     dq = -k2 * (b.x*b.x_dy + b.y*b.y_dy + b.z*b.z_dy)  
     dr = -k2 * (b.x*b.x_dz + b.y*b.y_dz + b.z*b.z_dz)  
-    dt = -omega  # James' code had -(2pi)**2 ?
     # dphi = 0.0 # hardcoded as const
     # domega = 0.0  
     # Collect result as tuple in appropriate order
@@ -75,7 +74,7 @@ class Ray:
     def solve(self, s_end, ns):  # RK45 solve
         f0 = self.set_f0()
         s = np.linspace(0, s_end, ns) 
-        f = odeint(df_ds, f0, s)
+        f = odeint(df_ds, f0, s,h0=1e-3)
         # self.f = f  
         self.t = f[:, 0]
         self.x = f[:, 1]
