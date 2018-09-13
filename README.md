@@ -11,6 +11,8 @@ in a zero beta plasma for a user-specified or predefined magnetic field.
 Here there are pre-defined classes for different magnetic fields,
 currently 
 
+* **Linear2dNull** B = [y,x,0] [a rotation of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
+
 This is where new fields should be added, as unique classes. No checks
 are made on the physicality of the field specified.
 
