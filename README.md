@@ -1,17 +1,22 @@
 # mhd-ray-tracing
 A collection of scripts relating to ray tracing methods (e.g. WKB) for
-MHD waves 
+MHD waves. 
 
 ## Current Contents
 Currently just consists of the generalised WKB solution for fast waves 
 in a zero beta plasma for a user-specified or predefined magnetic field.
+
+The mathematics is discribed in an upcoming paper which will be linked to here once available. 
+For now, see section 3.1 of [McLaughlin+2016](https://www.aanda.org/articles/aa/pdf/2016/07/aa27789-15.pdf) instead - the main solve is for equations 15 for a generic magnetic field B.
+
+
 
 ### magnetic_field.py 
 
 Here there are pre-defined classes for different magnetic fields,
 currently 
 
-* **Linear2dNull** B = [y,x,0] [a rotated version of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
+* **Linear2dNull** B = [y,x,0] [a arbitarilly-rotated version of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
 * **Dipole3dCase1** a 3D dipolar magnetic 'dome' embedded within a uniform vertical magnetic field. Described in McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
 
 This is where new fields should be added, as unique classes. No checks
