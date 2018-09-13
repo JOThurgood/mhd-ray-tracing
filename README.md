@@ -30,8 +30,10 @@ derivatives at a set of coordinates.
 ### wkb_fast_zerobeta.py
 
 Contains the data structure for an individual ray path (class Ray:),
-and functions related to advancing and sampling the path in time. 
+and functions related to advancing and sampling the path in time.
+Will soon also contain classes and functions relating to collections of rays ('Swarms') and their advancement and manipulation en-masse. 
 
+**USE**
 Typically import the module into a script under alias wkb
 
 ```python
@@ -61,9 +63,9 @@ test.solve(s_end,ns)
 ```
 
 This can be then plotted. We note that this returns the solution at 100 
-*sample points*. The ode solver chooses step sizes within tolerances. 
-This can give the impression of larger 'jumps' in regions of high alfven
-speed than in smaller. In reality, it is just that the linear sampling
+*sample points*. **The ode solver automatically chooses step sizes within tolerances.** 
+This can give the *impression* of larger 'jumps' in regions of high alfven
+speed than in regions of slower procession. In reality, it is just that the linear sampling
 in time means there are less points to construct the line. The ode 
 solution itself *usually* has used an appropriate step size within 
 adaptive tolerances. 
