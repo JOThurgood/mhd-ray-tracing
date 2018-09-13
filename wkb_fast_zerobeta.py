@@ -1,8 +1,27 @@
 import numpy as np
 import math
 from scipy.integrate import odeint
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+
+# This next block handles usr choice of magnetic_field clss
+import importlib  
+module = importlib.import_module('magnetic_field')
+className = None 
+while className is None: 
+    try:
+        className = input('enter Class name for your magnetic field:')
+        my_class = getattr(module, className)
+    except AttributeError:
+        print('''Error: 
+        Enter the name of one of the magnetic field classes defined
+        in magnetic_field.py. If you are running this from one of the
+        pre-defined tests, it should correspond to the intended
+        field
+
+        ''')
+        className = None
+
+
+magnetic_field = my_class
 
 
 def df_ds(f, s):
@@ -17,7 +36,7 @@ def df_ds(f, s):
     q = f[5]
     r = f[6] 
     k2 = p**2 + q**2 + r**2
-    b = MagneticField(x, y, z) 
+    b = magnetic_field(x, y, z) 
     b2 = b.x**2 + b.y**2 + b.z**2
     # Derivatives with respect to s
     dt = -omega
@@ -33,27 +52,6 @@ def df_ds(f, s):
     # Collect result as tuple in appropriate order
     df = (dt, dx, dy, dz, dp, dq, dr)
     return df 
-
-
-# A helper class so that df_ds can be switched to a 
-# different field without modifying the code eleswhere
-class MagneticField:
-
-    def __init__(self, x, y, z):
-
-        # 2D linear null point
-        self.x = y  
-        self.y = x   
-        self.z = 0.0
-        self.x_dx = 0.0
-        self.x_dy = 1.0
-        self.x_dz = 0.0
-        self.y_dx = 1.0
-        self.y_dy = 0.0
-        self.y_dz = 0.0
-        self.z_dx = 0.0
-        self.z_dy = 0.0
-        self.z_dz = 0.0
 
 
 class Ray:
@@ -86,22 +84,3 @@ class Ray:
         self.p = f[:, 4]
         self.q = f[:, 5]
         self.r = f[:, 6] 
-
-
-# Some testing stuff 
-
-test = Ray(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
-ns = 1000
-s_end = 3.*math.pi/2.  
-test.solve(s_end,ns)
-
-print(test.q)
-
-plt.plot(test.x,test.y)
-plt.show()
-
-#3D 
-#fig = plt.figure()
-#ax= fig.gca(projection='3d')
-#ax = plt.plot(test.x,test.y,test.z)
-#plt.show()
