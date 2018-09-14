@@ -1,11 +1,16 @@
-print('''Testing for wkb_fast_zerobeta solutions at linear 2d null.
-      This test script intends that you enter Linear2dNull
-      when prompted. Entering other valid classes will give 
-      nonsense results in this context''')
-
+# Create a tmp file to pass the chosen field class to wkb class
+f = open('tmp_config.py','w')
+f.write('fieldclass=\'Linear2dNull\'')
+f.close()
+# Import
 import matplotlib.pyplot as plt
 import wkb_fast_zerobeta as wkb
 import math
+# Remove the f
+import os
+os.remove('tmp_config.py')
+
+
 # Some testing stuff 
 
 test = wkb.Ray(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)

@@ -1,0 +1,3 @@
+# Ignore the irritating __pycache__
+__pycache__
+*.png
