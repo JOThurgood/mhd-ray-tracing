@@ -113,7 +113,7 @@ class Swarm:  # Essentially a list of Rays plus associated functions
             x = x0 + dp * math.sin(theta) * math.cos(phi)
             y = y0 + dp * math.sin(theta) * math.sin(phi)
             z = z0 + dp * math.cos(theta)
-            print(dp,x,y,z)
+            # print(dp,x,y,z)
             element = (x,y,z,p,q,r)
             coordlist.append(element)
         return cls(coordlist)
