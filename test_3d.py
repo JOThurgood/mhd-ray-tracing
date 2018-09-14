@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import wkb_fast_zerobeta as wkb
 import math
 from magnetic_field import Dipole3dCase1 as magnetic_field
-# Remove the f
+# Remove the temporary file
 import os
 os.remove('tmp_config.py')
 
