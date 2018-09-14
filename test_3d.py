@@ -1,4 +1,4 @@
-print('''Testing for wkb_fast_zerobeta solutions at a 3dnukk.
+print('''Testing for wkb_fast_zerobeta solutions at a 3dnull.
       This test script intends that you enter:
 
           Dipole3dCase1
