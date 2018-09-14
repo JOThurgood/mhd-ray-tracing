@@ -55,6 +55,9 @@ def df_ds(f, s):
     df = (dt, dx, dy, dz, dp, dq, dr)
     return df 
 
+# The following should be identical to df_ds
+# Its just the other solver requires the order of arguments to
+# be reversed [ (f,s) => (s,f) ] 
 def newdf_ds(s, f):
     # Helper variables
     t = f[0]
