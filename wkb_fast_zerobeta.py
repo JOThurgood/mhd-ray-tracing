@@ -167,6 +167,22 @@ class Swarm:  # Essentially a list of Rays plus associated functions
             coordlist.append(element)
         return cls(coordlist)
 
+    @classmethod
+    def init_zplane(cls,x0,x1,y0,y1,z,nx,ny,p,q,r):
+        nrays = nx * ny
+        xarr = np.linspace(x0,x1,nx)
+        yarr = np.linspace(y0,y1,ny)
+        coordlist =[]
+        for yy in yarr:
+            for xx in xarr:
+                x = xx
+                y = yy
+                b0 = magnetic_field(x,y,z)
+                r_el = r / b0.abs   
+                element = (x,y,z,p,q,r_el)
+                coordlist.append(element)
+        return cls(coordlist)
+
     def solve(self,s_end,ns):
         for myray in self.rays:
             myray.solve(s_end,ns)
