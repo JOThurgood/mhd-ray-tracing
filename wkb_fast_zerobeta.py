@@ -82,4 +82,42 @@ class Ray:
         self.z = f[:, 3]
         self.p = f[:, 4]
         self.q = f[:, 5]
-        self.r = f[:, 6] 
+        self.r = f[:, 6]
+
+class Swarm:  # Essentially a list of Rays plus associated functions
+
+    # Constructor takes a *list* of *tuples* for xyzpqr for each ray
+    def __init__(self,coordlist):
+        self.nrays = len(coordlist)
+        self.rays = []
+        for index in coordlist:
+            x = index[0]
+            y = index[1]
+            z = index[2]
+            p = index[3]
+            q = index[4]
+            r = index[5]
+            self.rays.append(Ray(x,y,z,p,q,r))
+
+    # Initialise rays at evenly spaced points along a line with same
+    # p0,q0,r0 
+    @classmethod
+    def init_line_linspace(cls,x0,x1,y0,y1,z0,z1,p,q,r,nrays):
+        #use d as 'radius' since r is grad_x k and reserved
+        l = ((x1-x0)**2 + (y1-y0)**2 + (z1-z0)**2)**(0.5) # length
+        d = np.linspace(0,l,nrays)
+        theta = math.acos((z1-z0)/l)
+        phi = math.atan2((y1-y0),(x1-x0))
+        coordlist =[]
+        for dp in d:
+            x = x0 + dp * math.sin(theta) * math.cos(phi)
+            y = y0 + dp * math.sin(theta) * math.sin(phi)
+            z = z0 + dp * math.cos(theta)
+            print(dp,x,y,z)
+            element = (x,y,z,p,q,r)
+            coordlist.append(element)
+        return cls(coordlist)
+
+    def solve(self,s_end,ns):
+        for myray in self.rays:
+            myray.solve(s_end,ns)
