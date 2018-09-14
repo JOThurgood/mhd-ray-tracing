@@ -114,8 +114,8 @@ class Ray:
         self.q = f[:, 5]
         self.r = f[:, 6]
     
-    def newsolve(self, s_end, ns):
-        sln = solve_ivp(newdf_ds,(0,s_end),self.f0,method='Radau')
+    def newsolve(self, s_end, ns): # different solver. Can set different
+        sln = solve_ivp(newdf_ds,(0,s_end),self.f0) # methods - see docs
         self.f = sln.y
         self.t = sln.y[0]
         self.x = sln.y[1]
