@@ -1,15 +1,16 @@
-print('''Testing for wkb_fast_zerobeta solutions at a 3dnull.
-      This test script intends that you enter:
-
-          Dipole3dCase1
-
-      when prompted. Entering other valid classes will give 
-      nonsense results in this context''')
-
+# Create a tmp file to pass the chosen field class to wkb class
+f = open('tmp_config.py','w')
+f.write('fieldclass=\'Dipole3dCase1\'')
+f.close()
+# Import
 import matplotlib.pyplot as plt
 import wkb_fast_zerobeta as wkb
 import math
 from magnetic_field import Dipole3dCase1 as magnetic_field
+# Remove the f
+import os
+os.remove('tmp_config.py')
+
 
 ## Initialise and plot an individual ray 
 #

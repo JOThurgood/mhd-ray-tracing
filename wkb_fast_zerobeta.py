@@ -2,26 +2,52 @@ import numpy as np
 import math
 from scipy.integrate import odeint
 
+## This next block handles usr choice of magnetic_field clss
+#import importlib  
+#module = importlib.import_module('magnetic_field')
+#className = None 
+#while className is None: 
+#    try:
+#        className = input('enter Class name for your magnetic field:')
+#        my_class = getattr(module, className)
+#    except AttributeError:
+#        print('''Error: 
+#        Enter the name of one of the magnetic field classes defined
+#        in magnetic_field.py. If you are running this from one of the
+#        pre-defined tests, it should correspond to the intended
+#        field
+#
+#        ''')
+#        className = None
+#
+#
+#magnetic_field = my_class
+
 # This next block handles usr choice of magnetic_field clss
 import importlib  
+import tmp_config as config
 module = importlib.import_module('magnetic_field')
 className = None 
 while className is None: 
     try:
-        className = input('enter Class name for your magnetic field:')
+        className = config.fieldclass
         my_class = getattr(module, className)
     except AttributeError:
         print('''Error: 
-        Enter the name of one of the magnetic field classes defined
-        in magnetic_field.py. If you are running this from one of the
-        pre-defined tests, it should correspond to the intended
-        field
-
         ''')
         className = None
 
 
 magnetic_field = my_class
+
+
+import importlib  
+module = importlib.import_module('magnetic_field')
+className = config.fieldclass
+
+def pass_the_field(className):
+    module = importlib.import_module('magnetic_field')
+    magnetic_field = getattr(module,className) 
 
 
 def df_ds(f, s):
