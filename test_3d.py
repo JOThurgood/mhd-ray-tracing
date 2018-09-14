@@ -97,11 +97,13 @@ plt.plot(orangeray.y,orangeray.z,color='orange')
 
 y0 = -0.06
 redray = wkb.Ray(x0,y0,z0,0.0, 0.0, r)
-ns = ns * 10
+ns = ns * 5 
 redray.solve(s_end,ns)
 
 plt.plot(redray.y,redray.z,color='red')
 
+ns = 1000  
+s_end = 0.5 / 2.0 / math.pi
 y0 = -0.05
 greenray = wkb.Ray(x0,y0,z0,0.0, 0.0, r)
 greenray.solve(s_end,ns)
