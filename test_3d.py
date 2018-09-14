@@ -55,7 +55,7 @@ r = 2.0 * math.pi / b0.abs
 
 swarm1 = wkb.Swarm.init_line_linspace(x0,x1,y0,y1,z0,z1,p,q,r,nrays)
 
-s_end = 1
+s_end = 0.5
 swarm1.solve(s_end,ns)
 
 for myray in swarm1.rays:
@@ -65,6 +65,7 @@ for myray in swarm1.rays:
 y0 = -0.3+0.01
 y1 = -0.1
 nrays = 20
+s_end = 0.1
 
 swarm2 = wkb.Swarm.init_line_linspace(x0,x1,y0,y1,z0,z1,p,q,r,nrays)
 swarm2.solve(s_end,ns)
@@ -94,6 +95,7 @@ plt.plot(orangeray.y,orangeray.z,color='orange')
 
 y0 = -0.06
 redray = wkb.Ray(x0,y0,z0,0.0, 0.0, r)
+ns = ns * 10
 redray.solve(s_end,ns)
 
 plt.plot(redray.y,redray.z,color='red')
