@@ -65,16 +65,16 @@ class Ray:
         self.p = p
         self.q = q
         self.r = r
+        self._set_f0()
 
-    def set_f0(self):   
+    def _set_f0(self):   
         f = (self.t, self.x, self.y, self.z, self.p, self.q, self.r)
         self.f0 = f
         return f
 
     def solve(self, s_end, ns):  # RK45 solve
-        f0 = self.set_f0()
         s = np.linspace(0, s_end, ns) 
-        f = odeint(df_ds, f0, s,h0=1e-3)
+        f = odeint(df_ds, self.f0, s,h0=1e-3)
         # self.f = f  
         self.t = f[:, 0]
         self.x = f[:, 1]
