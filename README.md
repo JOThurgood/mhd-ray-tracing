@@ -13,14 +13,11 @@ For now, see section 3.1 of [McLaughlin+2016](https://www.aanda.org/articles/aa/
 
 ### magnetic_field.py 
 
-This module contains pre-defined classes for different magnetic fields,
-currently: 
+*This is where new magnetic fields should be added, as unique classes.* No checks
+are made on the physicality of the field specified. This module also contains pre-defined classes for different magnetic fields, currently: 
 
 * **Linear2dNull** B = [y,x,0] [a arbitarilly-rotated version of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
 * **Dipole3dCase1** a 3D dipolar magnetic 'dome' embedded within a uniform vertical magnetic field. Described in McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
-
-*This is where new magnetic fields should be added, as unique classes.* No checks
-are made on the physicality of the field specified.
 
 The main solver imports one of these classes under the alias
 magnetic_field to act as a function to return the fields components and 
