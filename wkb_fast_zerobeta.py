@@ -9,13 +9,12 @@ className = None
 while className is None: 
     try:
         className = config.fieldclass
-        my_class = getattr(module, className)
+        magnetic_field = getattr(module, className)
     except AttributeError:
         print('''Error: tmp_config.py (passing fieldclass) missing
         (See Readme)
         ''')
         exit()
-magnetic_field = my_class
 
 def pass_the_field(className):
     module = importlib.import_module('magnetic_field')
