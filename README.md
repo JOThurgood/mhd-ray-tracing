@@ -1,6 +1,5 @@
 # mhd-ray-tracing
-A collection of scripts relating to ray tracing methods (e.g. WKB) for
-MHD waves. 
+A python repository of ray tracing methods (e.g. WKB) and plotting tools for MHD waves.
 
 ## Current functionality
 Currently consists of the generalised WKB solution for fast waves 
