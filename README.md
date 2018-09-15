@@ -2,7 +2,7 @@
 A collection of scripts relating to ray tracing methods (e.g. WKB) for
 MHD waves. 
 
-## Current Contents
+## Current functionality
 Currently consists of the generalised WKB solution for fast waves 
 in a zero beta plasma for a user-specified or predefined magnetic field. The intention is to further generalise the code in future (e.g. different modes, finite-beta, nonlinearity, etc)
 
