@@ -1,7 +1,6 @@
 import numpy as np
 import math
 from scipy.integrate import odeint, solve_ivp
-
 # This next block handles usr choice of magnetic_field clss
 import importlib  
 import tmp_config as config
@@ -12,15 +11,11 @@ while className is None:
         className = config.fieldclass
         my_class = getattr(module, className)
     except AttributeError:
-        print('''Error: 
+        print('''Error: tmp_config.py (passing fieldclass) missing
+        (See Readme)
         ''')
-        className = None
+        exit()
 magnetic_field = my_class
-
-
-import importlib  
-module = importlib.import_module('magnetic_field')
-className = config.fieldclass
 
 def pass_the_field(className):
     module = importlib.import_module('magnetic_field')
