@@ -16,11 +16,6 @@ while className is None:
         ''')
         exit()
 
-def pass_the_field(className):
-    module = importlib.import_module('magnetic_field')
-    magnetic_field = getattr(module,className) 
-
-
 def df_ds(f, s):
     # Helper variables
     t = f[0]
