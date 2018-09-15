@@ -1,6 +1,6 @@
 # mhd-ray-tracing
-A python repository of ray tracing methods (e.g. WKB) and plotting tools for MHD waves.
-
+A python repository of ray tracing methods (e.g. WKB) and plotting tools for MHD wave trajectories.
+ 
 ## Current functionality
 Currently consists of the generalised WKB solution for fast waves 
 in a zero beta plasma for a user-specified or predefined magnetic field. The intention is to further generalise the code in future (e.g. different modes, finite-beta, nonlinearity, etc)
