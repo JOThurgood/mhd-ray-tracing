@@ -42,6 +42,7 @@ for myray in swarm1.rays:
     plt.plot(myray.y[i],myray.z[i],'k+')
 
 title = '{:0.2f}'.format(t_end)
+title = 't = '+title
 plt.xlabel('y')
 plt.ylabel('z')
 plt.title(title)
