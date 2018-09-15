@@ -15,6 +15,7 @@ while className is None:
         (See Readme)
         ''')
         exit()
+import time
 
 def df_ds(f, s):
     # Helper variables
@@ -31,13 +32,13 @@ def df_ds(f, s):
     b = magnetic_field(x, y, z) 
     b2 = b.x**2 + b.y**2 + b.z**2
     # Derivatives with respect to s
-    dt = -omega #James' code had -2pi**2? 
-    dx = p * b2
-    dy = q * b2
-    dz = r * b2 
-    dp = -k2 * (b.x*b.x_dx + b.y*b.y_dx + b.z*b.z_dx)  
-    dq = -k2 * (b.x*b.x_dy + b.y*b.y_dy + b.z*b.z_dy)  
-    dr = -k2 * (b.x*b.x_dz + b.y*b.y_dz + b.z*b.z_dz)  
+    dt = omega
+    dx = -p * b2
+    dy = -q * b2
+    dz = -r * b2 
+    dp = k2 * (b.x*b.x_dx + b.y*b.y_dx + b.z*b.z_dx)  
+    dq = k2 * (b.x*b.x_dy + b.y*b.y_dy + b.z*b.z_dy)  
+    dr = k2 * (b.x*b.x_dz + b.y*b.y_dz + b.z*b.z_dz)  
     # dphi = 0.0 # hardcoded as const
     # domega = 0.0  
     # Collect result as tuple in appropriate order
@@ -62,13 +63,13 @@ def newdf_ds(s, f):
     b = magnetic_field(x, y, z) 
     b2 = b.x**2 + b.y**2 + b.z**2
     # Derivatives with respect to s
-    dt = -omega #James' code had -2pi**2? 
-    dx = p * b2
-    dy = q * b2
-    dz = r * b2 
-    dp = -k2 * (b.x*b.x_dx + b.y*b.y_dx + b.z*b.z_dx)  
-    dq = -k2 * (b.x*b.x_dy + b.y*b.y_dy + b.z*b.z_dy)  
-    dr = -k2 * (b.x*b.x_dz + b.y*b.y_dz + b.z*b.z_dz)  
+    dt = omega
+    dx = -p * b2
+    dy = -q * b2
+    dz = -r * b2 
+    dp = k2 * (b.x*b.x_dx + b.y*b.y_dx + b.z*b.z_dx)  
+    dq = k2 * (b.x*b.x_dy + b.y*b.y_dy + b.z*b.z_dy)  
+    dr = k2 * (b.x*b.x_dz + b.y*b.y_dz + b.z*b.z_dz)  
     # dphi = 0.0 # hardcoded as const
     # domega = 0.0  
     # Collect result as tuple in appropriate order
@@ -173,5 +174,10 @@ class Swarm:  # Essentially a list of Rays plus associated functions
         return cls(coordlist)
 
     def solve(self,s_end,ns):
+        start = time.time()
         for myray in self.rays:
             myray.solve(s_end,ns)
+        end = time.time()
+        print("Solved {} rays in {} seconds".
+            format(self.nrays,end - start))
+ 

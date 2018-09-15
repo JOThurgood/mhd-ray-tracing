@@ -52,7 +52,7 @@ nrays = 18
 p = 0
 q = 0
 #b0 = magnetic_field(x0,y0,z0)
-r = 2.0 * math.pi# / b0.abs
+r = -2.0 * math.pi# / b0.abs
 
 swarm1 = wkb.Swarm.init_line_linspace(x0,x1,y0,y1,z0,z1,p,q,r,nrays)
 
