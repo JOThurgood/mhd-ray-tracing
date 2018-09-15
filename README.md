@@ -39,7 +39,7 @@ Typically import the module into a script or the interactive interpreter under a
 ```python
 import wkb_fast_zerobeta as wkb
 ```
-*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fast_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, we proceed as follows. When the module is first imported it immediately looks for a module called tmp_config.py which tells it the desired class. If this file does not exist it will throw an error. As such can initialise your solver/plotting script with the following
+*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fast_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, we proceed as follows. When the module is first imported it immediately looks for a module called tmp_config.py which tells it the desired class. If this file does not exist it will throw an error. As such can initialise your splotting script / interactive session / whatever with the following
 
 ```python
 # Create a tmp file to pass the chosen field class to wkb class
