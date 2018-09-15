@@ -14,9 +14,9 @@ from magnetic_field import Dipole3dCase1 as magnetic_field
 import os
 os.remove('tmp_config.py')
 
-t_end = 1.00 
+t_end = 4.00 
 s_end = t_end / 2.0 / math.pi
-ns = 10 + 1# sampling number for solution (does not effect dh directly)
+ns = 40 + 1# sampling number for solution (does not effect dh directly)
 
 x0 = 0
 x1 = 0
@@ -42,7 +42,7 @@ if not os.path.exists(outdir):
 for i in range(0,ns-1):
     for myray in swarm1.rays:
         plt.plot(myray.y[i],myray.z[i],'k+')
-    title = '{:0.2f}'.format(t_end)
+    title = '{:0.2f}'.format(swarm1.rays[1].t[i])
     title = 't = '+title
     plt.xlabel('y')
     plt.ylabel('z')
