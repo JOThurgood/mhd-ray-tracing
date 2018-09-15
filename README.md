@@ -13,13 +13,13 @@ For now, see section 3.1 of [McLaughlin+2016](https://www.aanda.org/articles/aa/
 
 ### magnetic_field.py 
 
-Here there are pre-defined classes for different magnetic fields,
-currently 
+This module contains pre-defined classes for different magnetic fields,
+currently: 
 
 * **Linear2dNull** B = [y,x,0] [a arbitarilly-rotated version of the field in e.g. McLaughlin & Hood 2004](https://www.aanda.org/articles/aa/full/2004/24/aa0900/aa0900.html)
 * **Dipole3dCase1** a 3D dipolar magnetic 'dome' embedded within a uniform vertical magnetic field. Described in McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
 
-This is where new fields should be added, as unique classes. No checks
+*This is where new magnetic fields should be added, as unique classes.* No checks
 are made on the physicality of the field specified.
 
 The main solver imports one of these classes under the alias
@@ -35,7 +35,8 @@ It contains the data structure for an individual ray path (class Ray:),
 and functions related to advancing and sampling the path in time.
 Also contains classes and functions relating to collections of rays ('Swarms') and their advancement and manipulation en-masse. 
 
-**USE**
+**Usage** 
+
 Typically import the module into a script or the interactive interpreter under alias wkb. 
 
 ```python
@@ -84,16 +85,12 @@ solution itself *usually* has used an appropriate step size within
 adaptive tolerances. 
 Beware of this. 
 
-In future it would be best to allow the user to pass 
-the sampling points through to the solver, rather than it assuming 
-linear spacing between the two.
+### Examples
 
-### test_linear2dnull.py
+You can get a quick idea of how it works in practice by running and reading the following example 
+scripts in the main directory
 
-Examples of using the solver for the linear 2D magnetic null point
+* **example2d.py** Examples of using the solver for the linear 2D magnetic null point
  B=[y,x] and plotting.
-
-### test_3d.py
-
-Examples of using the solver for the 3D dipole field described in
+* **example_3d.py**  Examples of using the solver for the 3D dipole field described in
 McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
