@@ -39,7 +39,7 @@ Typically import the module into a script or the interactive interpreter under a
 ```python
 import wkb_fast_zerobeta as wkb
 ```
-*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fsat_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, when it is first imported it looks for a module called tmp_config.py which tells it the desired class. As such can initialise your solver/plotting script with the following
+*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fast_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, we proceed as follows. When the module is first imported it immediately looks for a module called tmp_config.py which tells it the desired class. If this file does not exist it will throw an error. As such can initialise your solver/plotting script with the following
 
 ```python
 # Create a tmp file to pass the chosen field class to wkb class
@@ -52,7 +52,7 @@ import wkb_fast_zerobeta as wkb
 import os
 os.remove('tmp_config.py')
 ```
-After or before which you will import whatever other modules you require for your problem.
+where you can replace 'Dipole3dCase1' with the class name of whatever field is appropriate for your problem. After or before this block, you will likely want to import whatever else you need (e.g. matplotlib). 
 
 This snippet initialises a ray at time 0 at (x0,y0,z0) and 
 (p0,q0,r0) 
