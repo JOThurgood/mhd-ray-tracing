@@ -15,6 +15,7 @@ while className is None:
         (See Readme)
         ''')
         exit()
+import time
 
 def df_ds(f, s):
     # Helper variables
@@ -173,5 +174,10 @@ class Swarm:  # Essentially a list of Rays plus associated functions
         return cls(coordlist)
 
     def solve(self,s_end,ns):
+        start = time.time()
         for myray in self.rays:
             myray.solve(s_end,ns)
+        end = time.time()
+        print("Solved {} rays in {} seconds".
+            format(self.nrays,end - start))
+ 
