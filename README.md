@@ -29,19 +29,32 @@ derivatives at a set of coordinates.
 
 ### wkb_fast_zerobeta.py
 
-Contains the data structure for an individual ray path (class Ray:),
+This is essentially the main solver.
+
+It contains the data structure for an individual ray path (class Ray:),
 and functions related to advancing and sampling the path in time.
-Will soon also contain classes and functions relating to collections of rays ('Swarms') and their advancement and manipulation en-masse. 
+Also contains classes and functions relating to collections of rays ('Swarms') and their advancement and manipulation en-masse. 
 
 **USE**
-Typically import the module into a script under alias wkb
+Typically import the module into a script or the interactive interpreter under alias wkb. 
 
 ```python
 import wkb_fast_zerobeta as wkb
 ```
+*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fsat_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, when it is first imported it looks for a module called tmp_config.py which tells it the desired class. As such can initialise your solver/plotting script with the following
 
-Whereon it will immediately ask for the Class of magnetic field you want
-to use (from magnetic_field.py) 
+```python
+# Create a tmp file to pass the chosen field class to wkb class
+f = open('tmp_config.py','w')
+f.write('fieldclass=\'Dipole3dCase1\'')
+f.close()
+# Import
+import wkb_fast_zerobeta as wkb
+# Remove the temporary file
+import os
+os.remove('tmp_config.py')
+```
+After or before which you will import whatever other modules you require for your problem.
 
 This snippet initialises a ray at time 0 at (x0,y0,z0) and 
 (p0,q0,r0) 
