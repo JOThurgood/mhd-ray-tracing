@@ -11,7 +11,7 @@ For now, see section 3.1 of [McLaughlin+2016](https://www.aanda.org/articles/aa/
 
 ## Using the code 
 
-### Packages needed
+### External packages needed
 Requires a number of not-too-exotic packages (matplotlib, numpy, scipy). If you are used to python it should be easy to figure out, if you are not, the anaconda distribution should come pre-packaged with everything you need.
 
 ### magnetic_field.py 
