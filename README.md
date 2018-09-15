@@ -9,7 +9,10 @@ in a zero beta plasma for a user-specified or predefined magnetic field. The int
 The mathematics is discribed in an upcoming paper which will be linked to here once available. 
 For now, see section 3.1 of [McLaughlin+2016](https://www.aanda.org/articles/aa/pdf/2016/07/aa27789-15.pdf) instead - the main solve is for equations 15 for a generic magnetic field B.
 
+## Using the code 
 
+### Packages needed
+Requires a number of not-too-exotic packages (matplotlib, numpy, scipy). If you are used to python it should be easy to figure out, if you are not, the anaconda distribution should come pre-packaged with everything you need.
 
 ### magnetic_field.py 
 
