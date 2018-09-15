@@ -28,7 +28,7 @@ derivatives at a set of coordinates.
 
 This is essentially the main solver.
 
-It contains the data structure for an individual ray path (class Ray:),
+It contains the data structure for an individual ray path (the class 'Ray'),
 and functions related to advancing and sampling the path in time.
 Also contains classes and functions relating to collections of rays ('Swarms') and their advancement and manipulation en-masse. 
 
@@ -39,7 +39,7 @@ Typically import the module into a script or the interactive interpreter under a
 ```python
 import wkb_fast_zerobeta as wkb
 ```
-*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fast_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, we proceed as follows. When the module is first imported it immediately looks for a module called tmp_config.py which tells it the desired class. If this file does not exist it will throw an error. As such can initialise your splotting script / interactive session / whatever with the following
+*However, it requires foreknowledge of the class of magnetic field you want to use* (from magnetic_field.py). To avoid having to edit wkb_fast_zerobeta.py every time we want to use a different field, and to keep scripts relating to different problems self-contained, we can proceed as follows. When the module is first imported it immediately looks for a module called tmp_config.py , which tells it the desired class. If this file does not exist it will throw an error. As such you can initialise your splotting script / interactive session / whatever with the following
 
 ```python
 # Create a tmp file to pass the chosen field class to wkb class
@@ -52,7 +52,7 @@ import wkb_fast_zerobeta as wkb
 import os
 os.remove('tmp_config.py')
 ```
-where you can replace 'Dipole3dCase1' with the class name of whatever field is appropriate for your problem. After or before this block, you will likely want to import whatever else you need (e.g. matplotlib). 
+where you mayreplace 'Dipole3dCase1' with the class name of whatever field is appropriate for your problem. After or before this block, you will likely want to import whatever else you need (e.g. matplotlib). 
 
 This snippet initialises a ray at time 0 at (x0,y0,z0) and 
 (p0,q0,r0) 
@@ -87,7 +87,8 @@ Beware of this.
 You can get a quick idea of how it works in practice by running and reading the following example 
 scripts in the main directory
 
-* **example2d.py** Examples of using the solver for the linear 2D magnetic null point
- B=[y,x] and plotting.
+
 * **example_3d.py**  Examples of using the solver for the 3D dipole field described in
 McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
+* **example2d.py** Examples of using the solver for the linear 2D magnetic null point
+ B=[y,x] and plotting.
