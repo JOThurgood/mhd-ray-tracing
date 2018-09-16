@@ -39,6 +39,6 @@ plt.plot(test.x,test.y)
 plt.xlabel('y')
 plt.ylabel('z')
 plt.axis([-1,1,-1,1])
-plt.savefig('test.png')
+#plt.savefig('test.png')
 plt.show()
 
