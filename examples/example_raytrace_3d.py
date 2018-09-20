@@ -1,3 +1,6 @@
+# Path relative to main directory
+import sys
+sys.path.append('../')
 # Create a tmp file to pass the chosen field class to wkb class
 f = open('tmp_config.py','w')
 f.write('fieldclass=\'Dipole3dCase1\'')
