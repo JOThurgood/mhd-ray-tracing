@@ -36,8 +36,8 @@ s_end = t_end / 2.0 / math.pi
 test.solve(s_end,ns)
 
 plt.plot(test.x,test.y)
-plt.xlabel('y')
-plt.ylabel('z')
+plt.xlabel('x')
+plt.ylabel('y')
 plt.axis([-1,1,-1,1])
 #plt.savefig('test.png')
 plt.show()
