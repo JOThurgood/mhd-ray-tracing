@@ -50,7 +50,7 @@ plt.plot(0.0,1.05992,'kx')
 plt.subplot(122)
 plt.plot(rghtray.y,rghtray.z,'black')
 plt.xlabel('y')
-plt.ylabel('z')
+#plt.ylabel('z')
 plt.title('(c)')
 plt.axis([-0.5,0.5,0,1.5])
 
