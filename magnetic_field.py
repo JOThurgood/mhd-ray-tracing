@@ -50,3 +50,9 @@ class Dipole3dCase1:
         # self.z_dy = self.z_dx / x * y
         self.z_dy = 3.*a*y * (4.*z**2 - x**2 - y**2) / denom
         self.z_dz = 3.*a*z * (2.*z**2 -3.*x**2 - 3.*y**2) / denom
+        #flux function
+        denom = ( x**2 + y**2 + z**2 )**(3./2.)
+        #self.ax = a * y / denom - b * y/2.
+        self.ax = a * y / denom - b * y/2.
+        self.ay = - a * x / denom + b * x / 2.  
+        self.az = 0.0
