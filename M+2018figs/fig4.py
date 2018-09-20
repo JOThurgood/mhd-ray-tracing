@@ -81,6 +81,8 @@ s_end = 0.5 / 2.0 / math.pi
 y0 = -0.05
 greenray = wkb.Ray(x0,y0,z0,0.0, 0.0, r)
 greenray.solve(s_end,ns)
+#plot the null as a cross
+plt.plot(0.0,1.05992,'kx',zorder=1e2)
 
 plt.plot(greenray.y,greenray.z,color='green')
 plt.xlabel('y')

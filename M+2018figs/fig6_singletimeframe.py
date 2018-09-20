@@ -9,10 +9,30 @@ sys.path.append('../')
 import matplotlib.pyplot as plt
 import wkb_fast_zerobeta as wkb
 import math
+import numpy as np
 from magnetic_field import Dipole3dCase1 as magnetic_field
 # Remove the f
 import os
 os.remove('tmp_config.py')
+
+# Plot fieldlines as contours of the flux functon
+y0 = -2.10
+y1 = 2.10
+z0 = 0.
+z1 = 3.10
+ny = 4*25
+nz = ny
+gy = np.linspace(y0,y1,ny)
+gz = np.linspace(z0,z1,nz)
+
+ax = np.zeros([ny,nz])
+speed = np.zeros([ny,nz])
+for iz in range(0,nz-1):
+    for iy in range(0,ny-1):
+        b = magnetic_field(0.0,gy[iy], gz[iz])
+        ax[iz,iy] = b.ax 
+        speed[iz,iy] = b.abs
+plt.contour(gy,gz,ax,levels=[0],colors='red')
 
 t_end = 1.00 
 s_end = t_end / 2.0 / math.pi
