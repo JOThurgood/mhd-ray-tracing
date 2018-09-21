@@ -56,3 +56,24 @@ class Dipole3dCase1:
         self.ax = a * y / denom - b * y/2.
         self.ay = - a * x / denom + b * x / 2.  
         self.az = 0.0
+
+
+# 2 potential nulls linked with a separtor 
+class Double2dNullSeparator:
+
+    def __init__(self, x, y, z):
+        B0 = 1.0
+        a  = 1.0
+        self.x = B0 / a**2 * (x**2 - y**2 - a**2)  
+        self.y = B0 / a**2 * (-2.0 * x * y)
+        self.z = 0.0
+        self.x_dx = 2.0 * B0 / a**2 * x
+        self.x_dy = -2.0 * B0 / a**2 * y
+        self.x_dz = 0.0
+        self.y_dx = B0 / a**2 * (-2.0 * y )
+        self.y_dy = B0 / a**2 * (-2.0 * x )
+        self.y_dz = 0.0
+        self.z_dx = 0.0
+        self.z_dy = 0.0
+        self.z_dz = 0.0
+        self.az = B0 / a**2 * ( x**2*y -y**3/3. -a**2 * y )
