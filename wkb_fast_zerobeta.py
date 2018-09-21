@@ -180,15 +180,14 @@ class Swarm:  # Essentially a list of Rays plus associated functions
         theta = theta[0:len(theta)-1]  # remove the duplicate
         coordlist = []
         for angle in theta:
-            x = d * math.cos(angle) - x0
-            y = d * math.sin(angle) - y0
-            print(angle,x,y)
+            x = d * math.cos(angle)
+            y = d * math.sin(angle)
             z = z0
             p = dphi_dr * x / (x**2 + y**2)**0.5
             q = dphi_dr * y / (x**2 + y**2)**0.5
             r = 0.
-            x = x - x0
-            y = y - y0
+            x = x + x0
+            y = y + y0
             b0 = magnetic_field(x,y,z)
             p = p / b0.abs
             q = q / b0.abs
