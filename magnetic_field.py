@@ -78,3 +78,5 @@ class Double2dNullSeparator:
         self.z_dy = 0.0
         self.z_dz = 0.0
         self.az = B0 / a**2 * ( x**2*y -y**3/3. -a**2 * y )
+        self.abs = (self.x**2 + self.y**2 + self.z**2)**(0.5)
+
