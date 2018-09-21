@@ -84,6 +84,10 @@ solution itself *usually* has used an appropriate step size within
 adaptive tolerances. 
 Beware of this. 
 
+### fieldlines.py
+
+Handles fieldline tracing and datastructures in an analagous way to the wkb ray tracing. Useful for cases where plotting fieldlines as contours of a known flux function (magnetic vector potential) is impractical (mainly, 3D!)
+
 ### Examples
 
 You can get a quick idea of how it works in practice by running and reading the scripts in the "examples" directory. 
