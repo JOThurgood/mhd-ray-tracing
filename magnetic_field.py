@@ -19,6 +19,7 @@ class Linear2dNull:
         self.z_dy = 0.0
         self.z_dz = 0.0
         self.az = 0.5 * (y**2 - x**2)
+        self.abs = (self.x**2 + self.y**2 + self.z**2)**(0.5)
 
 # The field described in McLaughlin, Thurgood, Botha & Wiggs 
 # (2018, in prep)

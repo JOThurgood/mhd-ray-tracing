@@ -173,6 +173,29 @@ class Swarm:  # Essentially a list of Rays plus associated functions
                 coordlist.append(element)
         return cls(coordlist)
 
+    @classmethod
+    def init_circle_zplane(cls,x0,y0,z0,d,nrays,dphi_dr):
+        # again d is "r" (radius) to avoid confusion with the other r
+        theta = np.linspace(0,2.0*math.pi,nrays+1)
+        theta = theta[0:len(theta)-1]  # remove the duplicate
+        coordlist = []
+        for angle in theta:
+            x = d * math.cos(angle) - x0
+            y = d * math.sin(angle) - y0
+            print(angle,x,y)
+            z = z0
+            p = dphi_dr * x / (x**2 + y**2)**0.5
+            q = dphi_dr * y / (x**2 + y**2)**0.5
+            r = 0.
+            x = x - x0
+            y = y - y0
+            b0 = magnetic_field(x,y,z)
+            p = p / b0.abs
+            q = q / b0.abs
+            element = (x,y,z,p,q,r)
+            coordlist.append(element)
+        return cls(coordlist)
+
     def solve(self,s_end,ns):
         start = time.time()
         for myray in self.rays:
@@ -180,4 +203,4 @@ class Swarm:  # Essentially a list of Rays plus associated functions
         end = time.time()
         print("Solved {} rays in {} seconds".
             format(self.nrays,end - start))
- 
+
