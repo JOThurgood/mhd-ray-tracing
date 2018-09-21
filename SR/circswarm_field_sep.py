@@ -36,7 +36,7 @@ plt.rcParams['contour.negative_linestyle'] = 'solid'
 plt.contour(gx,gy,az,25,colors='blue')
 plt.contour(gx,gy,az,levels=[0],colors='red')
 
-# Some testing stuff 
+# Solve the swarm
 x0 = -1.
 y0 = 0.
 z0 = 0.
