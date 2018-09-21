@@ -86,11 +86,4 @@ Beware of this.
 
 ### Examples
 
-You can get a quick idea of how it works in practice by running and reading the following example 
-scripts in the main directory
-
-
-* **example_3d.py**  Examples of using the solver for the 3D dipole field described in
-McLaughlin, Thurgood, Botha & Wiggs (2018, in prep). 
-* **example2d.py** Examples of using the solver for the linear 2D magnetic null point
- B=[y,x] and plotting.
+You can get a quick idea of how it works in practice by running and reading the scripts in the "examples" directory. 
