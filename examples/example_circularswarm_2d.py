@@ -34,14 +34,15 @@ plt.contour(gx,gy,az,4,colors='black')
 x0 = 0.
 y0 = 0.
 z0 = 0.
-d = 1.0 # radius
+d = 0.5 # radius
 nrays =40
 dphi_dr = 1.0
-t_end = 5. 
+t_end = 2. 
 s_end = t_end / 2.0 / math.pi  
 ns = 100
 
 swarm1 = wkb.Swarm.init_circle_zplane(x0,y0,z0,d,nrays,dphi_dr)
+swarm2 = wkb.Swarm.init_circle_zplane(x0,y0,z0,d,nrays,dphi_dr)
 
 for myray in swarm1.rays:
     plt.plot(myray.x,myray.y,'ro')
@@ -49,6 +50,12 @@ for myray in swarm1.rays:
 swarm1.solve(s_end,ns)
 for myray in swarm1.rays:
     plt.plot(myray.x,myray.y,'g')
+
+swarm2 = wkb.Swarm.init_circle_zplane(x0,y0,z0,d,nrays,-dphi_dr)
+swarm2.solve(s_end,ns)
+for myray in swarm2.rays:
+    plt.plot(myray.x,myray.y,'b')
+
 
 plt.xlabel('x')
 plt.ylabel('y')
