@@ -5,8 +5,7 @@ A python repository of ray tracing methods (e.g. WKB) and plotting tools for MHD
 Currently consists of the generalised WKB solution for fast waves 
 in a zero beta plasma for a user-specified or predefined magnetic field. The intention is to further generalise the code in future (e.g. different modes, finite-beta, nonlinearity, etc)
 
-The mathematics is discribed in an upcoming paper which will be linked to here once available. 
-For now, see section 3.1 of [McLaughlin+2016](https://www.aanda.org/articles/aa/pdf/2016/07/aa27789-15.pdf) instead - the main solve is for equations 15 for a generic magnetic field B.
+The mathematics is discribed  [McLaughlin, Thurgood, Botha & Wiggs 2019](https://doi.org/10.1093/mnras/stz085). 
 
 ## Using the code 
 
