@@ -9,6 +9,10 @@ The mathematics is discribed  [McLaughlin, Thurgood, Botha & Wiggs 2019](https:/
 
 ## Using the code 
 
+The best place to get started might be to [read the Jupyter examples notebook](https://github.com/JOThurgood/mhd-ray-tracing/blob/master/examples/examples_notebook.ipynb) . If you view it in github, it should render as a (static) html file. If you download the repository and have Jupyter running, you should be able to interact with it.
+
+Otherwise, there are some instructions below 
+
 ### External packages needed
 Requires a number of not-too-exotic packages (matplotlib, numpy, scipy). If you are used to python it should be easy to figure out, if you are not, the anaconda distribution should come pre-packaged with everything you need.
 
