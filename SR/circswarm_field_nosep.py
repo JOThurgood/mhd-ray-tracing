@@ -43,7 +43,7 @@ z0 = 0.
 d = 0.1 # radius
 nrays =40
 dphi_dr = -1.0
-t_end = 1.7 
+t_end = 23.0
 s_end = t_end / 2.0 / math.pi  
 ns = 1000
 
