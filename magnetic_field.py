@@ -90,7 +90,7 @@ class Double2dNullNoSeparator:
         self.y = B0 / a**2 * ( x**2 - y**2 - a**2 )
         self.z = 0.0
         self.x_dx = 2.0 * B0 / a**2 * y
-        self.x_dy = -2.0 * B0 / a**2 * x
+        self.x_dy = 2.0 * B0 / a**2 * x
         self.x_dz = 0.0
         self.y_dx = B0 / a**2 * (2.0 * x)
         self.y_dy = B0 / a**2 * (-2.0 * y)
